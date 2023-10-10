@@ -35,6 +35,12 @@ body {
   white-space: nowrap !important; /* 3 */
 }
 
+.user-icon {
+  color: #2c3e50;
+  height: 18px;
+  margin-right: 5px;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -54,6 +60,8 @@ body {
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
+  display: flex;
+    align-items: center;
 }
 
 .main-nav-item:hover {
