@@ -5,7 +5,7 @@ import Form from "../Components/Form";
 import userCircle from "../designs/img/circle-user-solid.png"
 
 
-function Home() {
+function Login() {
   return (
     <>
     <Header />
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Login;
