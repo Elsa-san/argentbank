@@ -8,16 +8,16 @@ const Header = () => {
     return (
         <header>
             <nav className="main-nav">
-      <Link className="main-nav-logo" to="./">
+      <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
           src={logo}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>
-      </Link>
+         </Link>
 
-        <Link className="main-nav-item" to="./login">
+        <Link className="main-nav-item" to="/login">
           <img src={userCircle} className="user-icon" alt="icone de profil utilisateur" />
           Sign In
         </Link>
