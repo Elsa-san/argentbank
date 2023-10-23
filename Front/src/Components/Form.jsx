@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Form = () => {
-
+const Form = ({ onSubmit }) => {
+const handleSubmit = (event) => {
+  event.preventDefault()
+  onSubmit(event)
+}
 return (
-<form>
+<form onSubmit={handleSubmit}>
       <div className="input-wrapper">
         <label htmlFor="username">Username</label>
         <input

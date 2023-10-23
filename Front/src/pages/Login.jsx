@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
@@ -7,20 +7,26 @@ import Form from '../Components/Form';
 import userCircle from '../designs/img/circle-user-solid.png';
 import { login } from '../redux/actions/login'; 
 
+
 function Login() {
   const dispatch = useDispatch(); // Hook to call Redux actions
   const token = useSelector((state) => state.auth.token); // Selects the authentication token from the Redux store
-  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const navigate = useNavigate();
+
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
+    console.log('Username changed:', event.target.value);
+
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    console.log('Password changed:', event.target.value);
+
   };
 
   const handleSubmit = (event) => {
@@ -29,14 +35,18 @@ function Login() {
       email: username,
       password: password,
     };
+        console.log('Form submitted with data:', userData);
+
 
     // call authentication action to handle connexion 
     dispatch(login(userData));
   };
 
-  if (token) {
-    navigate('/profile'); // Redirects to the dashboard if a token is present
-  }
+   useEffect(() => {
+    if (token) {
+      navigate('/profile');
+    }
+  }, [token, navigate]);
 
   return (
     <>

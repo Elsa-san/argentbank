@@ -9,7 +9,7 @@ export const login = (userData) => {
         },
         body: JSON.stringify(userData)
       });
-      console.log('réponse http', response);
+      console.log('HTTP Response:', response.status);
 
       if (response.status === 200) {
         const data = await response.json();
