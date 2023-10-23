@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Account from "../Components/Account"
 
-function Home() {
+function Dashboard() {
   return (
 <>
     <Header />
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Dashboard;

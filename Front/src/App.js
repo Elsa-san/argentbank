@@ -1,7 +1,7 @@
 import './App.css';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Dashboard";
 
 // Importing routing functions from React Router
 import {
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
     element: <Login />,
   },
     {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/profile",
+    element: <Profile />,
   },
 
 ])
