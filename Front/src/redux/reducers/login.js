@@ -17,6 +17,12 @@ const authReducer = (state = initialState, action) => { // Use a switch instruct
         token: '',
         error: action.payload.error
       };
+    case 'LOGOUT':
+        return {
+        ...state,
+        token:null,
+        error:null,
+        }
     default:
       return state; // Simply returns the current state without modifying it
   }
