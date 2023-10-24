@@ -24,7 +24,7 @@ export const login = (userData) => {
         dispatch({
           type: 'AUTH_ERROR',
           payload: {
-            error: 'email ou mot de passe non valides',
+            error: 'Email ou mot de passe non valides',
           }
         });
       }

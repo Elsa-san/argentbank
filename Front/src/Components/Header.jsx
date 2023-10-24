@@ -5,6 +5,7 @@ import { logout } from '../redux/actions/logout';
 import logo from "../designs/img/argentBankLogo.png"
 import userCircle from "../designs/img/circle-user-solid.png"
 import "../designs/css/main.css"
+import logoutUser from "../designs/img/logoutUser.png"
 
 
 const Header = () => {
@@ -29,6 +30,7 @@ const Header = () => {
         {token ? ( // if there is a token, show "Sign Out"
           <Link to="/" onClick={handleLogout} className="main-nav-item"> 
             <img src={userCircle} className="user-icon" alt="icone de profil utilisateur" />
+            <img src={logoutUser} className="user-icon" alt="icone de logout" />
             Sign Out
           </Link>
         ) : ( // if no token, show "Sign In"
