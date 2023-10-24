@@ -1,6 +1,6 @@
 const initialState = {
   token: null, //token initially empty
-  error: null
+  error: null,
 };
 
 const authReducer = (state = initialState, action) => { // Use a switch instruction to determine how to update the state according to the action
