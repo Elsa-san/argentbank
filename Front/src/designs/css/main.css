@@ -196,12 +196,20 @@ body {
   margin-left: 0.25rem;
 }
 
+.input__wrapper {
+  margin-bottom: 5px;
+}
+
+.input__wrapper label {
+  margin-right: 15px;
+  color: #fff;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
-  color: #fff;
 }
 
 .input-wrapper label {
@@ -211,6 +219,7 @@ body {
 .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
+  align-items: center;
 }
 
 .footer {
@@ -321,5 +330,9 @@ body {
   margin-right: 10px;
 }
 
+}
+
+h2 {
+  color: #fff;
 }
 

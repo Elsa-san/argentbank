@@ -10,7 +10,7 @@ function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
   const [newUsername, setNewUsername] = useState('');
   const token = useSelector((state) => state.auth.token);
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch(); // Déplacez cette ligne ici
 
   const startEditing = () => {
     setIsEditing(true);
@@ -22,17 +22,20 @@ function Dashboard() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // Supprimez cette ligne : const dispatch = useDispatch();
 
     dispatch(setProfileUsername(token, newUsername));
     setIsEditing(false);
   };
+
+  const username = useSelector((state) => state.user.username);
 
   return (
     <>
       <Header />
       <main className="main bg-dark">
         <div className="header">
-          <h1>Welcome back<br />Tony Jarvis!</h1>
+          <h1>Welcome back<br />{username}!</h1>
           {isEditing ? (
             null
           ) : (
