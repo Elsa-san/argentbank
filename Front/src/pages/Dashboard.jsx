@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import Header from "../Components/Header";
+import { useSelector, useDispatch } from 'react-redux';
+import Header from '../Components/Header';
 import Footer from "../Components/Footer";
 import Account from "../Components/Account";
+import { setProfileUsername } from '../redux/actions/user';
+
 
 function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
+  const [newUsername, setNewUsername] = useState('');
+  const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch(); 
 
   const startEditing = () => {
     setIsEditing(true);
@@ -16,7 +22,9 @@ function Dashboard() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Ajoutez la logique pour gérer la soumission du formulaire ici
+
+    dispatch(setProfileUsername(token, newUsername));
+    setIsEditing(false);
   };
 
   return (
@@ -44,6 +52,8 @@ function Dashboard() {
                 id="username"
                 className="input__wrapper"
                 required="required"
+                value={newUsername}
+                onChange={(e) => setNewUsername(e.target.value)}
               />
             </div>
             <div className="input__wrapper">
@@ -78,19 +88,18 @@ function Dashboard() {
           </form>
         ) : null}
 
-        {/* Placer les composants Account ici */}
-        <Account 
+        <Account
           title="Argent Bank Checking (x8349)"
           amount="$2,082.79"
-        />   
-        <Account 
+        />
+        <Account
           title="Argent Bank Savings (x6712)"
           amount="$10,928.42"
-        />   
-        <Account 
+        />
+        <Account
           title="Argent Bank Credit Card (x8349)"
           amount="$184.30"
-        />   
+        />
       </main>
       <Footer />
     </>
