@@ -13,12 +13,14 @@ export const login = (userData) => {
 
       if (response.status === 200) {
         const data = await response.json();
+        const token = data.body.token;
         dispatch({
           type: 'LOGIN',
           payload: {
             token: data.body.token,
           }
         });
+        localStorage.setItem('token', token);
       } else {
         // Handle errors
         dispatch({

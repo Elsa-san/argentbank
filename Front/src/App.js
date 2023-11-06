@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Dashboard";
 import Error from "./pages/Error";
-import React from 'react';
+import React, {useEffect} from 'react';
 import store from "./redux/store";
 
 
@@ -47,6 +47,18 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      store.dispatch({
+        type: 'LOGIN',
+        payload: {
+          token: token,
+        }
+      });
+    }
+  }, []);
+
   return (
     <>
     <RouterProvider router={router}/>
