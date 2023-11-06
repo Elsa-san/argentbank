@@ -6,11 +6,12 @@ import Account from "../Components/Account";
 import { setProfileUsername } from '../redux/actions/user';
 
 
+
 function Dashboard() {
   const [isEditing, setIsEditing] = useState(false);
   const [newUsername, setNewUsername] = useState('');
   const token = useSelector((state) => state.auth.token);
-  const dispatch = useDispatch(); // Déplacez cette ligne ici
+  const dispatch = useDispatch(); 
 
   const startEditing = () => {
     setIsEditing(true);
